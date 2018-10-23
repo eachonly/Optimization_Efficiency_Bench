@@ -4,12 +4,12 @@
 %
 % Programmer: Youwei Qin, Dmitri Kavetski,George Kuczera
 % Created: 7 July 2018 at Suzhou, China
-% Last modified 7 July 2018
+% Last modified 23 October 2018
 %
 % Reference
 % * Kavetski2018: Dmitri Kavetski, Youwei Qin, George Kuczera (2018),
 %                 The fast and the robust: Trade-offs between optimization robustness and cost in the calibration of environmental models,
-%                 Water Resources Research, in review
+%                 Water Resources Research, 54. https://doi.org/10.1029/2017WR022051
 %
 %******************************************************************
 % ---
@@ -39,12 +39,12 @@ tolT=0.10;          %calculate the Rg
 tolG=0.01;          %calculate the Rt
 
 % load the data file for HYMOD_Tambo River
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/HYMOD_Tambo.txt');
-gnNS=1-2*gn/NSDRY;
-qnNS=1-2*qn/NSDRY;
-pestNS=1-2*pest/NSDRY;
-sceNS=1-2*sce/NSDRY;
-ddsNS=1-2*dds/NSDRY;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/HYMOD_Tambo.txt');
+gnNS=1-gn/NSDRY;
+qnNS=1-qn/NSDRY;
+pestNS=1-pest/NSDRY;
+sceNS=1-sce/NSDRY;
+ddsNS=1-dds/NSDRY;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;
@@ -62,12 +62,12 @@ aG=[a1G,a2G,a3G,a4G]
 aT=[a1T,a2T,a3T,a4T]
 
 % load the data file SXIPAR Tambo River
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/SIXPAR_Tambo.txt');
-gnNS=1-2*gn/NSDRY;
-qnNS=1-2*qn/NSDRY;
-pestNS=1-2*pest/NSDRY;
-sceNS=1-2*sce/NSDRY;
-ddsNS=1-2*dds/NSDRY;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/SIXPAR_Tambo.txt');
+gnNS=1-gn/NSDRY;
+qnNS=1-qn/NSDRY;
+pestNS=1-pest/NSDRY;
+sceNS=1-sce/NSDRY;
+ddsNS=1-dds/NSDRY;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;
@@ -85,12 +85,12 @@ aG=[a1G,a2G,a3G,a4G]
 aT=[a1T,a2T,a3T,a4T]
 
 % load the data file HYMOD Bass River
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/HYMOD_Bass.txt');
-gnNS=1-2*gn/NSAVE;
-qnNS=1-2*qn/NSAVE;
-pestNS=1-2*pest/NSAVE;
-sceNS=1-2*sce/NSAVE;
-ddsNS=1-2*dds/NSAVE;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/HYMOD_Bass.txt');
+gnNS=1-gn/NSAVE;
+qnNS=1-qn/NSAVE;
+pestNS=1-pest/NSAVE;
+sceNS=1-sce/NSAVE;
+ddsNS=1-dds/NSAVE;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;
@@ -108,12 +108,12 @@ aG=[a1G,a2G,a3G,a4G]
 aT=[a1T,a2T,a3T,a4T]
 
 % load the data file SIXPAR Bass River
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/SIXPAR_Bass.txt');
-gnNS=1-2*gn/NSAVE;
-qnNS=1-2*qn/NSAVE;
-pestNS=1-2*pest/NSAVE;
-sceNS=1-2*sce/NSAVE;
-ddsNS=1-2*dds/NSAVE;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/SIXPAR_Bass.txt');
+gnNS=1-gn/NSAVE;
+qnNS=1-qn/NSAVE;
+pestNS=1-pest/NSAVE;
+sceNS=1-sce/NSAVE;
+ddsNS=1-dds/NSAVE;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;
@@ -131,12 +131,12 @@ aG=[a1G,a2G,a3G,a4G]
 aT=[a1T,a2T,a3T,a4T]
 
 % load the data file HYMOD Coopers Creek
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/HYMOD_Coopers.txt');
-gnNS=1-2*gn/NSWET;
-qnNS=1-2*qn/NSWET;
-pestNS=1-2*pest/NSWET;
-sceNS=1-2*sce/NSWET;
-ddsNS=1-2*dds/NSWET;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/HYMOD_Coopers.txt');
+gnNS=1-gn/NSWET;
+qnNS=1-qn/NSWET;
+pestNS=1-pest/NSWET;
+sceNS=1-sce/NSWET;
+ddsNS=1-dds/NSWET;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;
@@ -154,12 +154,12 @@ aG=[a1G,a2G,a3G,a4G]
 aT=[a1T,a2T,a3T,a4T]
 
 % load the data file SIXPAR Coopers Creek
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/SIXPAR_Coopers.txt');
-gnNS=1-2*gn/NSWET;
-qnNS=1-2*qn/NSWET;
-pestNS=1-2*pest/NSWET;
-sceNS=1-2*sce/NSWET;
-ddsNS=1-2*dds/NSWET;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/SIXPAR_Coopers.txt');
+gnNS=1-gn/NSWET;
+qnNS=1-qn/NSWET;
+pestNS=1-pest/NSWET;
+sceNS=1-sce/NSWET;
+ddsNS=1-dds/NSWET;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;
@@ -177,12 +177,12 @@ aG=[a1G,a2G,a3G,a4G]
 aT=[a1T,a2T,a3T,a4T]
 
 % load the data file SIMHYD Tambo River
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/SIMHYD_Tambo.txt');
-gnNS=1-2*gn/NSDRY;
-qnNS=1-2*qn/NSDRY;
-pestNS=1-2*pest/NSDRY;
-sceNS=1-2*sce/NSDRY;
-ddsNS=1-2*dds/NSDRY;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/SIMHYD_Tambo.txt');
+gnNS=1-gn/NSDRY;
+qnNS=1-qn/NSDRY;
+pestNS=1-pest/NSDRY;
+sceNS=1-sce/NSDRY;
+ddsNS=1-dds/NSDRY;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;
@@ -200,12 +200,12 @@ aG=[a1G,a2G,a3G,a4G]
 aT=[a1T,a2T,a3T,a4T]
 
 % load the data file FUSE Tambo River
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/FUSE_Tambo.txt');
-gnNS=1-2*gn/NSDRY;
-qnNS=1-2*qn/NSDRY;
-pestNS=1-2*pest/NSDRY;
-sceNS=1-2*sce/NSDRY;
-ddsNS=1-2*dds/NSDRY;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/FUSE_Tambo.txt');
+gnNS=1-gn/NSDRY;
+qnNS=1-qn/NSDRY;
+pestNS=1-pest/NSDRY;
+sceNS=1-sce/NSDRY;
+ddsNS=1-dds/NSDRY;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;
@@ -223,12 +223,12 @@ aG=[a1G,a2G,a3G,a4G]
 aT=[a1T,a2T,a3T,a4T]
 
 % load the data file SIMHYD Bass River
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/SIMHYD_Bass.txt');
-gnNS=1-2*gn/NSAVE;
-qnNS=1-2*qn/NSAVE;
-pestNS=1-2*pest/NSAVE;
-sceNS=1-2*sce/NSAVE;
-ddsNS=1-2*dds/NSAVE;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/SIMHYD_Bass.txt');
+gnNS=1-gn/NSAVE;
+qnNS=1-qn/NSAVE;
+pestNS=1-pest/NSAVE;
+sceNS=1-sce/NSAVE;
+ddsNS=1-dds/NSAVE;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;
@@ -246,12 +246,12 @@ aG=[a1G,a2G,a3G,a4G]
 aT=[a1T,a2T,a3T,a4T]
 
 % load the data file FUSE Bass River
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/FUSE_Bass.txt');
-gnNS=1-2*gn/NSAVE;
-qnNS=1-2*qn/NSAVE;
-pestNS=1-2*pest/NSAVE;
-sceNS=1-2*sce/NSAVE;
-ddsNS=1-2*dds/NSAVE;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/FUSE_Bass.txt');
+gnNS=1-gn/NSAVE;
+qnNS=1-qn/NSAVE;
+pestNS=1-pest/NSAVE;
+sceNS=1-sce/NSAVE;
+ddsNS=1-dds/NSAVE;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;
@@ -269,12 +269,12 @@ aG=[a1G,a2G,a3G,a4G]
 aT=[a1T,a2T,a3T,a4T]
 
 % load the data file SIMHYD Coopers Creek
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/SIMHYD_Coopers.txt');
-gnNS=1-2*gn/NSWET;
-qnNS=1-2*qn/NSWET;
-pestNS=1-2*pest/NSWET;
-sceNS=1-2*sce/NSWET;
-ddsNS=1-2*dds/NSWET;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/SIMHYD_Coopers.txt');
+gnNS=1-gn/NSWET;
+qnNS=1-qn/NSWET;
+pestNS=1-pest/NSWET;
+sceNS=1-sce/NSWET;
+ddsNS=1-dds/NSWET;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;
@@ -292,12 +292,12 @@ aG=[a1G,a2G,a3G,a4G]
 aT=[a1T,a2T,a3T,a4T]
 
 % load the data file FUSE Coopers Creek
-[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_araw/FUSE_Coopers.txt');
-gnNS=1-2*gn/NSWET;
-qnNS=1-2*qn/NSWET;
-pestNS=1-2*pest/NSWET;
-sceNS=1-2*sce/NSWET;
-ddsNS=1-2*dds/NSWET;
+[xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('../0_raw/FUSE_Coopers.txt');
+gnNS=1-gn/NSWET;
+qnNS=1-qn/NSWET;
+pestNS=1-pest/NSWET;
+sceNS=1-sce/NSWET;
+ddsNS=1-dds/NSWET;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*tolT;

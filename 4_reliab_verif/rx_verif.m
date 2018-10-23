@@ -4,12 +4,12 @@
 %
 % Programmer: Youwei Qin, Dmitri Kavetski,George Kuczera
 % Created: 7 July 2018 at Suzhou, China
-% Last modified 7 July 2018
+% Last modified 23 October 2018
 %
 % Reference
 % * Kavetski2018: Dmitri Kavetski, Youwei Qin, George Kuczera (2018),
 %                 The fast and the robust: Trade-offs between optimization robustness and cost in the calibration of environmental models,
-%                 Water Resources Research, in review
+%                 Water Resources Research, 54. https://doi.org/10.1029/2017WR022051
 %
 %******************************************************************
 

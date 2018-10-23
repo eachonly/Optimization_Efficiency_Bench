@@ -4,12 +4,12 @@
 %
 % Programmer: Youwei Qin, Dmitri Kavetski,George Kuczera
 % Created: 7 July 2018 at Suzhou, China
-% Last modified 7 July 2018
+% Last modified 23 October 2018
 %
 % Reference
 % * Kavetski2018: Dmitri Kavetski, Youwei Qin, George Kuczera (2018),
 %                 The fast and the robust: Trade-offs between optimization robustness and cost in the calibration of environmental models,
-%                 Water Resources Research, in review
+%                 Water Resources Research, 54. https://doi.org/10.1029/2017WR022051
 %
 %******************************************************************
 
@@ -59,11 +59,11 @@ PN1= get(H(1),'pos');
 set(H(1),'pos',PN1);
 % load the data file
 [xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('SIXPAR_Coopers_Bench.txt');
-gnNS=1-2*gn/NSWET;
-qnNS=1-2*qn/NSWET;
-pestNS=1-2*pest/NSWET;
-sceNS=1-2*sce/NSWET;
-ddsNS=1-2*dds/NSWET;
+gnNS=1-gn/NSWET;
+qnNS=1-qn/NSWET;
+pestNS=1-pest/NSWET;
+sceNS=1-sce/NSWET;
+ddsNS=1-dds/NSWET;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*xtolTini;
@@ -134,11 +134,11 @@ PN2= get(H(2),'pos');
 set(H(2),'pos',PN2);
 % load the data file
 [xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('SIMHYD_Bass_Bench.txt');
-gnNS=1-2*gn/NSAVE;
-qnNS=1-2*qn/NSAVE;
-pestNS=1-2*pest/NSAVE;
-sceNS=1-2*sce/NSAVE;
-ddsNS=1-2*dds/NSAVE;
+gnNS=1-gn/NSAVE;
+qnNS=1-qn/NSAVE;
+pestNS=1-pest/NSAVE;
+sceNS=1-sce/NSAVE;
+ddsNS=1-dds/NSAVE;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*xtolTini;
@@ -203,11 +203,11 @@ PN3= get(H(3),'pos');
 set(H(3),'pos',PN3);
 % load the data file
 [xaxis,gn,gnnum,qn,qnnum,pest,pestnum,sce,scenum,dds,ddsnum]=textread('FUSE_Tambo_Bench.txt');
-gnNS=1-2*gn/NSDRY;
-qnNS=1-2*qn/NSDRY;
-pestNS=1-2*pest/NSDRY;
-sceNS=1-2*sce/NSDRY;
-ddsNS=1-2*dds/NSDRY;
+gnNS=1-gn/NSDRY;
+qnNS=1-qn/NSDRY;
+pestNS=1-pest/NSDRY;
+sceNS=1-sce/NSDRY;
+ddsNS=1-dds/NSDRY;
 % use the best NS of RGN, DDS, LM, SCE-nc10
 xbest=max([gnNS(1),pestNS(1),sceNS(1),ddsNS(1)]);
 xtolT=xbest-xbest*xtolTini;

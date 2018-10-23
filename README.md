@@ -6,7 +6,7 @@ Dmitri Kavetski(1,2), Youwei Qin(3) and George Kuczera(2)
 (2) School of Engineering, University of Newcastle, Callaghan, NSW 2300, Australia
 (3) State Key Laboratory of Hydrology, Water Resources and Hydraulic Engineering, Centre for Global Change and Water Cycle, Hohai University, Nanjing 210098, China
 
-Research paper submitted to Water Resources Research 3 October 2017, revised 4 July 2018
+Research paper submitted to Water Resources Research 3 October 2017, revised 4 July 2018, accpeted 10 JUL 2018
 
 ==================
 
@@ -15,11 +15,11 @@ This file details the organization of files and folders, and the operation of Ma
 
 *** 1. List of Folders ***
 
-0_araw            : Raw data for multiple algorithm invocations over 12 scenarios: objective function value and number of function calls at convergence
+0_raw             : Raw data for multiple algorithm invocations over 12 scenarios: objective function value and number of function calls at convergence
 1_figure1_best100 : Raw data and matlab skript for emprical distribution function plot
-2_rx              : Matlab skript to evaluate global and tolerable reliabilities; uses data in folder "0_araw"
+2_rx              : Matlab skript to evaluate global and tolerable reliabilities; uses data in folder "0_raw"
 3_mx_cx_eff       : Excel spreedsheet to evaluate Mx, Cx, Efficiency ratio for a given confidence level (eg, 95%); uses a pre-calculated Rx from Item 1.2 above
-4_reliab_verif    : Matlab skript to verify Mx estimates (see Sections 4.3.2 and 5.5 in main text); uses data in folder "0_araw"
+4_reliab_verif    : Matlab skript to verify Mx estimates (see Sections 4.3.2 and 5.5 in main text); uses data in folder "0_raw"
 
 
 *** 2. List of Matlab and Excel skripts ***
